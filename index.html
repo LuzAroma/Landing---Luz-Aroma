@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="¡Sorprende a mamá con el Kit Artesanal Día de la Madre de Luz y Aroma! Edición limitada con fragancia de jazmín blanco y ámbar. Reserva ahora con descuento.">
+  <meta name="keywords" content="Día de la Madre, kit artesanal, Luz y Aroma, regalo, edición limitada, vela artesanal">
+  <meta name="author" content="Luz y Aroma">
+  <meta property="og:title" content="Kit Día de la Madre – Luz y Aroma">
+  <meta property="og:description" content="Un regalo artesanal único para el Día de la Madre con fragancia de jazmín blanco y ámbar suave.">
+  <meta property="og:image" content="img/kayla-warner-tRk9WKkEf7Q-unsplash 2.jpg">
+  <meta property="og:url" content="https://yourwebsite.com/landing">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>¡Regala amor con Luz y Aroma!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Lato', sans-serif;
+      background-color: #fff5ef;
+      color: #2d2d2d;
+      margin: 0;
+      line-height: 1.6;
+    }
+    .hero-section {
+      background-image: url('img/pexels-artempodrez-6801221.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      padding: 10rem 1rem;
+      text-align: center;
+      position: relative;
+      color: white;
+    }
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5));
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .cta-button {
+      background-color: #f1c4a0;
+      color: #2d2d2d;
+      padding: 1.2rem 3.5rem;
+      border-radius: 9999px;
+      font-weight: 700;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 6px 20px rgba(241, 196, 160, 0.4);
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-button::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: width 0.4s, height 0.4s;
+    }
+    .cta-button:hover::after {
+      width: 300px;
+      height: 300px;
+    }
+    .cta-button:hover {
+      background-color: #e0a77a;
+      transform: translateY(-3px);
+    }
+    .form-section {
+      background: #fff;
+      padding: 3rem 1.5rem;
+      max-width: 600px;
+      margin: -5rem auto 4rem;
+      border-radius: 1.5rem;
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+      position: relative;
+      z-index: 2;
+      border: 2px solid #f1c4a0;
+    }
+    .form-container input {
+      border: 1px solid #e0e0e0;
+      border-radius: 0.5rem;
+      padding: 0.75rem;
+      width: 100%;
+      margin-bottom: 1rem;
+      transition: border-color 0.3s;
+    }
+    .form-container input:focus {
+      border-color: #f1c4a0;
+      outline: none;
+    }
+    .form-container button {
+      background-color: #f1c4a0;
+      color: #2d2d2d;
+      border: none;
+      padding: 0.75rem;
+      border-radius: 0.5rem;
+      width: 100%;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .form-container button:hover {
+      background-color: #e0a77a;
+    }
+    .features-section, .gallery-section, .testimonials-section, .faq-section, .social-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 1rem;
+      text-align: center;
+      
+    }
+    .feature-card, .testimonial-card, .faq-card {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 0.75rem;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid #f1c4a0;
+    }
+    .feature-card:hover, .testimonial-card:hover, .faq-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 20px rgba(241, 196, 160, 0.3);
+    }
+    .gallery-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 0.75rem;
+    }
+    .gallery-card img {
+      width: 100%;
+      height: 50vh;
+      transition: transform 0.5s ease;
+    }
+    .gallery-card:hover img {
+      transform: scale(1.1);
+    }
+    .gallery-card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(241, 196, 160, 0.2);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .gallery-card:hover::after {
+      opacity: 1;
+    }
+    .carousel {
+      position: relative;
+      overflow: hidden;
+    }
+    .carousel-inner {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+    .carousel-item {
+      min-width: 100%;
+      padding: 0 1rem;
+    }
+    .carousel-nav {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+    }
+    .carousel-nav button {
+      background: #f1c4a0;
+      color: #2d2d2d;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .carousel-nav button:hover {
+      background: #e0a77a;
+    }
+    .faq-card {
+      text-align: left;
+      margin-bottom: 1rem;
+      cursor: pointer;
+    }
+    .faq-answer {
+      display: none;
+      padding-top: 1rem;
+    }
+    .faq-card.active .faq-answer {
+      display: block;
+    }
+    .social-section a {
+      transition: transform 0.3s;
+    }
+    .social-section a:hover {
+      transform: scale(1.2);
+    }
+    .social-feed img {
+      border-radius: 0.5rem;
+      transition: transform 0.3s ease;
+    }
+    .social-feed img:hover {
+      transform: scale(1.05);
+    }
+    footer {
+      background-color: #fff2ec;
+      text-align: center;
+      padding: 3rem 1rem;
+      border-top: 2px solid #f1c4a0;
+    }
+    .footer-links a {
+      color: #2d2d2d;
+      margin: 0 1rem;
+      transition: color 0.3s;
+    }
+    .footer-links a:hover {
+      color: #e0a77a;
+    }
+    .subscribe-form input {
+      border: 1px solid #e0e0e0;
+      border-radius: 0.5rem;
+      padding: 0.5rem;
+      width: 200px;
+      margin-right: 0.5rem;
+    }
+    .subscribe-form button {
+      background-color: #f1c4a0;
+      color: #2d2d2d;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .subscribe-form button:hover {
+      background-color: #e0a77a;
+    }
+    @media (max-width: 768px) {
+      .hero-section {
+        padding: 6rem 1rem;
+        background-attachment: scroll;
+      }
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+      .hero-content p {
+        font-size: 1.2rem;
+      }
+      .form-section {
+        margin: -3rem 1rem 2rem;
+        padding: 2rem;
+      }
+      .features-section, .gallery-section, .testimonials-section, .faq-section, .social-section {
+        padding: 2rem 1rem;
+      }
+      .gallery-card img {
+        height: 200px;
+        object-fit: cover;
+      }
+    }
+    @media (max-width: 480px) {
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+      .cta-button {
+        padding: 0.75rem 2rem;
+        font-size: 1rem;
+      }
+      .subscribe-form input {
+        width: 150px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content" data-aos="zoom-in" data-aos-duration="1000">
+      <h1 class="text-5xl md:text-6xl font-playfair mb-4">Este Día de la Madre, regala luz, aroma y momentos inolvidables</h1>
+      <p class="text-xl md:text-2xl mb-8">Regala nuestro Kit Artesanal Edición Limitada de Luz y Aroma con fragancia exclusiva de jazmín blanco y ámbar suave. ¡Reserva ahora con 10% de descuento!</p>
+    </div>
+  </section>
+
+  <!-- Form Section -->
+  <section class="form-section" data-aos="fade-up" data-aos-duration="800">
+    <h2 class="text-3xl font-playfair mb-4">Reserva tu Kit con Descuento</h2>
+    <p class="text-lg mb-6">Déjanos tus datos para asegurar tu Kit Día de la Madre y recibe un 10% de descuento exclusivo. ¡Te contactaremos pronto!</p>
+    <div class="form-container">
+      <form action="https://formsubmit.co/planmtkdigital25@gmail.com" method="POST" id="reserve-form">
+        <input type="text" name="name" placeholder="Tu nombre" required aria-label="Nombre">
+        <input type="email" name="email" placeholder="Tu correo electrónico" required aria-label="Email">
+        <input type="hidden" name="_subject" value="¡Nueva reserva del Kit Día de la Madre - Luz y Aroma!">
+        <input type="hidden" name="_autoresponse" value="¡Gracias por reservar tu Kit Artesanal Día de la Madre con Luz y Aroma! Usa tu 10% de descuento en https://yourwebsite.com. Te contactaremos pronto.">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://luzaroma.github.io/Luz-Aroma/">
+        <button type="submit">Obtener mi descuento</button>
+      </form>
+    </div>
+  </section>
+
+   <!-- Gallery Section -->
+   <section class="gallery-section" data-aos="fade-up" data-aos-duration="1000">
+    <h2 class="text-3xl font-playfair mb-8">Descubre el Kit Día de la Madre</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="gallery-card" data-aos="zoom-in" data-aos-delay="100">
+        <img src="img/producto2.jpg" alt="Vela artesanal de jazmín y ámbar">
+      </div>
+      <div class="gallery-card" data-aos="zoom-in" data-aos-delay="200">
+        <img src="img/mia-golic-6JtuGvLzh20-unsplash.jpg" alt="Caja regalo personalizada">
+      </div>
+      <div class="gallery-card" data-aos="zoom-in" data-aos-delay="300">
+        <img src="img/simply-mersah-6WZtlK0Ez6w-unsplash.jpg" alt="Bolsa de lino incluida">
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features-section" data-aos="fade-up" data-aos-duration="1000">
+    <h2 class="text-3xl font-playfair mb-8">Un regalo que enamora</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+        <h3 class="text-xl font-bold mb-2">Hecho a mano</h3>
+        <p>Vela de 230g con cera vegetal y mecha de algodón, creada artesanalmente en Valencia.</p>
+      </div>
+      <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+        <h3 class="text-xl font-bold mb-2">Aroma irresistible</h3>
+        <p>Jazmín blanco y ámbar suave para un ambiente cálido y elegante.</p>
+      </div>
+      <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+        <h3 class="text-xl font-bold mb-2">Edición única</h3>
+        <p>Caja regalo, tarjeta personalizada y bolsa de lino para un detalle inolvidable.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Media Section -->
+  <section class="social-section" data-aos="fade-up" data-aos-duration="800">
+    <h2 class="text-3xl font-playfair mb-8">Síguenos en redes</h2>
+    <div class="flex justify-center gap-6">
+      <a href="" target="_blank" aria-label="Instagram">
+        <svg class="w-10 h-10 fill-current text-[#2d2d2d]" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.332.014 7.052.072c-4.95.232-6.532 2.318-6.764 6.763C.014 8.332 0 8.741 0 12c0 3.259.014 3.668.072 4.948.232 4.945 2.318 6.531 6.763 6.763 1.28.058 1.689.072 4.948.072s3.668-.014 4.948-.072c4.945-.232 6.531-2.318 6.763-6.763.058-<...>1.28.072-1.689.072-4.948V12c0-3.259-.014-3.668-.072-4.948-.232-4.945-2.318-6.531-6.763-6.763C15.668.014 15.259 0 12 0zM12 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm4.965-10.405a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z"/></svg>
+      </a>
+      <a href="" target="_blank" aria-label="Facebook">
+        <svg class="w-10 h-10 fill-current text-[#2d2d2d]" viewBox="0 0 24 24"><path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24h-1.918c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.731 0 1.325-.593 1.325-1.325V1.325C24 .593 23.407 0 22.675 0z"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <h2 class="text-2xl font-playfair mb-2">Luz & Aroma</h2>
+    <p>Artesanía y tradición hecha con amor en Valencia, España.</p>
+    <p>© 2025 Luz & Aroma. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+    document.getElementById('reserve-form').addEventListener('submit', function(e) {
+      const email = document.querySelector('input[name="email"]').value;
+      if (!email.includes('@')) {
+        e.preventDefault();
+        alert('Por favor, introduce un correo electrónico válido.');
+      }
+    });
+    document.querySelectorAll('.faq-card').forEach(card => {
+      card.addEventListener('click', () => {
+        card.classList.toggle('active');
+      });
+    });
+  </script>
+</body>
+</html>
